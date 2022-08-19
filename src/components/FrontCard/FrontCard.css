@@ -1,0 +1,32 @@
+.front-card-movile {
+   position: absolute;
+   top: 125px;
+   left: 25px;
+   width: 300px;
+   z-index: 10;
+}
+
+.card-number {
+   position: absolute;
+   top: 50px;
+   left: 12px;
+   font-size: 25px;
+   color: white;
+}
+
+.card-name {
+   position: absolute;
+   bottom: 15px;
+   left: 10px;
+   color: white;
+   font-size: 13px;
+   text-transform: uppercase;
+}
+
+.card-date {
+   position: absolute;
+   bottom: 15px;
+   right: 20px;
+   color: white;
+   font-size: 13px;
+}

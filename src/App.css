@@ -1,0 +1,9 @@
+html {
+   font-family: 'Space Grotesk', sans-serif !important;
+}
+
+/* MOVILE */
+
+.card-layout .content-left .bg-left-movile {
+   width: 375px;
+}

@@ -1,0 +1,13 @@
+.back-card-movile {
+   position: absolute;
+   top: 32px;
+   left: 52px;
+   width: 300px;
+}
+
+.card-cvv {
+   position: absolute;
+   top: 70px;
+   right: 32px;
+   color: white;
+}
