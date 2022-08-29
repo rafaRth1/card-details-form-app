@@ -1,78 +1,79 @@
-export const FormCard = ({ cardName, cardNumber, OnchageInput, month, year, cvc }: any) => {
+import { useState } from 'react';
+import InputForm from './InputForm/InputForm';
+
+export const FormCard = () => {
+   const [cardName, setCardName] = useState({ value: '', hassError: null });
+   const [cardNumber, setCardNumber] = useState({ value: '', hassError: null });
+   const [monthValue, setMonthValue] = useState({ value: '', hassError: null });
+   const [yearValue, setYearValue] = useState({ value: '', hassError: null });
+   const [cvcValue, setCvcValue] = useState({ value: '', hassError: null });
+
+   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+
+      console.log('Submit');
+   };
+
    return (
       <div className='form-card'>
-         <form className='flex flex-col'>
-            <div>
-               <label htmlFor='name' className='block uppercase'>
-                  CardHolder Name
-               </label>
-               <input
-                  type='text'
-                  id='name'
-                  name='cardName'
-                  className='border-2 border-slate-200 rounded-md bg-white p-2 w-full my-2'
-                  placeholder='e.g. Rafael Alvarez'
-                  value={cardName}
-                  onChange={(e) => OnchageInput(e)}
-               />
-            </div>
+         <form className='flex flex-col' onSubmit={(e) => handleSubmit(e)}>
+            <InputForm
+               state={cardName}
+               setstate={setCardName}
+               name={'cardNameValue'}
+               label={'CardHolder Name'}
+               type={'text'}
+               className={'border-2 border-slate-200 rounded-md bg-white p-2 w-full my-2'}
+               placeholder='e.g. Rafael Alvarez'
+               regularphrase={/\d/}
+            />
 
-            <div>
-               <label htmlFor='card-number' className='block uppercase'>
-                  Card Number
-               </label>
-               <input
-                  type='number'
-                  id='card-number'
-                  name='cardNumber'
+            <InputForm
+               state={cardNumber}
+               setstate={setCardNumber}
+               name={'cardNumber'}
+               label={'Card Number'}
+               type={'text'}
+               regularphrase={/\d/}
+               className='border-2 border-slate-200 rounded-md bg-white p-2 w-full my-2'
+               placeholder='e.g. 0000 0000 0000 0000'
+               min={0}
+            />
+
+            <div className='flex items-center'>
+               <InputForm
+                  state={monthValue}
+                  setstate={setMonthValue}
+                  name={'month'}
+                  label={'Month'}
+                  type={'number'}
+                  regularphrase={/\d/}
+                  className='border-2 border-slate-200 rounded-md bg-white p-2 w-20 my-2'
+                  placeholder='MM'
                   min={0}
-                  className='border-2 border-slate-200 rounded-md bg-white p-2 w-full my-2'
-                  placeholder='e.g. 0000 0000 0000 0000'
-                  value={cardNumber.split(', ')}
-                  onChange={(e) => OnchageInput(e)}
                />
-            </div>
-
-            <div className='flex'>
-               <div>
-                  <div>
-                     <label htmlFor='month' className='block uppercase'>
-                        Exp. Date (MM/YYYY)
-                     </label>
-                     <input
-                        type='number'
-                        name='month'
-                        min={0}
-                        className='border-2 border-slate-200 rounded-md bg-white p-2 w-20 my-2'
-                        value={month}
-                        placeholder='MM'
-                        onChange={(e) => OnchageInput(e)}
-                     />
-                     <input
-                        type='number'
-                        name='year'
-                        min={0}
-                        className='border-2 border-slate-200 rounded-md bg-white p-2 w-20 m-3'
-                        value={year}
-                        placeholder='YY'
-                        onChange={(e) => OnchageInput(e)}
-                     />
-                  </div>
-               </div>
-               <div>
-                  <label htmlFor='cvc' className='block uppercase'>
-                     CVC
-                  </label>
-                  <input
-                     type='number'
-                     min={0}
-                     name='cvc'
-                     className='border-2 border-slate-200 rounded-md bg-white p-2 w-40 my-2'
-                     value={cvc}
-                     placeholder='000'
-                     onChange={(e) => OnchageInput(e)}
-                  />
-               </div>
+               <InputForm
+                  state={yearValue}
+                  setstate={setYearValue}
+                  name={'year'}
+                  type={'number'}
+                  label={'Year'}
+                  min={0}
+                  regularphrase={/\d/}
+                  className='border-2 border-slate-200 rounded-md bg-white p-2 w-20 m-2'
+                  placeholder='YY'
+               />
+               <InputForm
+                  state={cvcValue}
+                  setstate={setCvcValue}
+                  name='cvc'
+                  label={'Cvc'}
+                  type={'number'}
+                  min={0}
+                  regularphrase={/\d/}
+                  className='border-2 border-slate-200 rounded-md bg-white p-2 w-40 my-2'
+                  placeholder='000'
+               />
             </div>
 
             <button className='w-full bg-purple-900 text-white p-3 rounded-lg my-2'>Confirm</button>

@@ -1,0 +1,14 @@
+/* body{
+    background-color: hsl(279, 6%, 55%);
+    background-color: hsl(270, 3%, 87%);
+    background-color: #21092f;
+} */
+
+.check-complete-container h2,
+p {
+   color: #21092f !important;
+}
+
+.check-complete-container button {
+   background-color: #21092f;
+}

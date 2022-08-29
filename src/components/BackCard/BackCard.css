@@ -11,3 +11,20 @@
    right: 32px;
    color: white;
 }
+
+@media (min-width: 1024px) {
+   .back-card-movile {
+      position: absolute;
+      top: 510px;
+      left: 180px;
+      width: 445px;
+   }
+
+   .card-cvv {
+      position: absolute;
+      top: 103px;
+      right: 50px;
+      color: white;
+      font-size: 23px;
+   }
+}

@@ -30,3 +30,36 @@
    color: white;
    font-size: 13px;
 }
+
+@media (min-width: 1024px) {
+   .front-card-movile {
+      position: absolute;
+      top: 235px;
+      left: 100px;
+      width: 445px;
+   }
+
+   .card-number {
+      position: absolute;
+      top: 50px;
+      left: 30px;
+      font-size: 35px;
+   }
+
+   .card-name {
+      position: absolute;
+      bottom: 15px;
+      left: 10px;
+      color: white;
+      font-size: 23px;
+      text-transform: uppercase;
+   }
+
+   .card-date {
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      color: white;
+      font-size: 23px;
+   }
+}
